@@ -35,3 +35,34 @@ $myHashtable.key = 'New Key1 value'
 # REmoving element from the key
 $myHashtable.Remove('keyname')
 
+#=================== Creating Custom Objects =========================
+
+## Long way to declare Objects
+$objectName = New-Object -TypeName PSCustomObject
+
+## aAdding attributes to the object
+Add-Member -InputObject $objectName -MemberType NoteProperty -Name 'atribute1' -Value 'value'
+
+## Example
+
+$employee1 = New-Object -TypeName PSCustomObject
+Add-Member -InputObject $employee1 -MemberType NoteProperty -Name 'EmployeeID' -Value 001
+Add-Member -InputObject $employee1 -MemberType NoteProperty -Name 'FirstName' -Value 'Mary'
+Add-Member -InputObject $employee1 -MemberType NoteProperty -Name 'EmployeeTitle' -Value 'CEO'
+
+
+### ========================= Shorter version Syntaxt============
+
+$newObject = [PSCustomObject]@{
+    ObjectName = 'Value'
+}
+
+
+# This is an example
+$employee2 = [PSCustomObject]@{
+    EmployeeID = 002
+    Firstname = 'Peter'
+    EmployeeTitle = 'Developer'
+}
+
+$employee2.EmployeeTitle

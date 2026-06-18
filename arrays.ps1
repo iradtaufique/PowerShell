@@ -45,4 +45,3 @@ $myList.RemoveAt(0)
 $myList.RemoveRange(0,2) # this will remove element from index 0, 1,and 2
 
 $myList
-
